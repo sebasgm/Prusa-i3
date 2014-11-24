@@ -71,6 +71,7 @@ const short temptable_1[][2] PROGMEM = {
 {       1008*OVERSAMPLENR       ,       0       } //safety
 };
 #endif
+
 #if (THERMISTORHEATER_0 == 2) || (THERMISTORHEATER_1 == 2) || (THERMISTORHEATER_2 == 2) || (THERMISTORBED == 2) //200k bed thermistor
 const short temptable_2[][2] PROGMEM = {
 //200k ATC Semitec 204GT-2
@@ -109,7 +110,6 @@ const short temptable_2[][2] PROGMEM = {
    {1012*OVERSAMPLENR, 10},
    {1016*OVERSAMPLENR, 0},
 };
-
 #endif
 #if (THERMISTORHEATER_0 == 3) || (THERMISTORHEATER_1 == 3) || (THERMISTORHEATER_2 == 3) || (THERMISTORBED == 3) //mendel-parts
 const short temptable_3[][2] PROGMEM = {
@@ -248,68 +248,70 @@ const short temptable_6[][2] PROGMEM = {
    {970*OVERSAMPLENR, 25},
    {978*OVERSAMPLENR, 22},
    {1008*OVERSAMPLENR, 3},
-   {1023*OVERSAMPLENR, 0}  //to allow internal 0�C
+   {1023*OVERSAMPLENR, 0}  //to allow internal 0 degrees C
 };
 #endif
 
 #if (THERMISTORHEATER_0 == 7) || (THERMISTORHEATER_1 == 7) || (THERMISTORHEATER_2 == 7) || (THERMISTORBED == 7) // 100k Honeywell 135-104LAG-J01
 const short temptable_7[][2] PROGMEM = {
-   {1*OVERSAMPLENR, 500},
-   {46*OVERSAMPLENR, 270}, //top rating 300C
-   {50*OVERSAMPLENR, 265},
-   {54*OVERSAMPLENR, 260},
-   {58*OVERSAMPLENR, 255},
-   {62*OVERSAMPLENR, 250},
-   {67*OVERSAMPLENR, 245},
-   {72*OVERSAMPLENR, 240},
-   {79*OVERSAMPLENR, 235},
-   {85*OVERSAMPLENR, 230},
-   {91*OVERSAMPLENR, 225},
-   {99*OVERSAMPLENR, 220},
-   {107*OVERSAMPLENR, 215},
-   {116*OVERSAMPLENR, 210},
-   {126*OVERSAMPLENR, 205},
-   {136*OVERSAMPLENR, 200},
-   {149*OVERSAMPLENR, 195},
-   {160*OVERSAMPLENR, 190},
-   {175*OVERSAMPLENR, 185},
-   {191*OVERSAMPLENR, 180},
-   {209*OVERSAMPLENR, 175},
-   {224*OVERSAMPLENR, 170},
-   {246*OVERSAMPLENR, 165},
-   {267*OVERSAMPLENR, 160},
-   {293*OVERSAMPLENR, 155},
-   {316*OVERSAMPLENR, 150},
-   {340*OVERSAMPLENR, 145},
-   {364*OVERSAMPLENR, 140},
-   {396*OVERSAMPLENR, 135},
-   {425*OVERSAMPLENR, 130},
-   {460*OVERSAMPLENR, 125},
-   {489*OVERSAMPLENR, 120},
-   {526*OVERSAMPLENR, 115},
-   {558*OVERSAMPLENR, 110},
-   {591*OVERSAMPLENR, 105},
-   {628*OVERSAMPLENR, 100},
-   {660*OVERSAMPLENR, 95},
-   {696*OVERSAMPLENR, 90},
-   {733*OVERSAMPLENR, 85},
-   {761*OVERSAMPLENR, 80},
-   {794*OVERSAMPLENR, 75},
-   {819*OVERSAMPLENR, 70},
-   {847*OVERSAMPLENR, 65},
-   {870*OVERSAMPLENR, 60},
-   {892*OVERSAMPLENR, 55},
-   {911*OVERSAMPLENR, 50},
-   {929*OVERSAMPLENR, 45},
-   {944*OVERSAMPLENR, 40},
-   {959*OVERSAMPLENR, 35},
-   {971*OVERSAMPLENR, 30},
-   {981*OVERSAMPLENR, 25},
-   {989*OVERSAMPLENR, 20},
-   {994*OVERSAMPLENR, 15},
-   {1001*OVERSAMPLENR, 10},
-   {1005*OVERSAMPLENR, 5},
-   {1023*OVERSAMPLENR, 0}  //to allow internal 0�C
+   {1*OVERSAMPLENR, 941},
+   {19*OVERSAMPLENR, 362},
+   {37*OVERSAMPLENR, 299}, //top rating 300C
+   {55*OVERSAMPLENR, 266},
+   {73*OVERSAMPLENR, 245},
+   {91*OVERSAMPLENR, 229},
+   {109*OVERSAMPLENR, 216},
+   {127*OVERSAMPLENR, 206},
+   {145*OVERSAMPLENR, 197},
+   {163*OVERSAMPLENR, 190},
+   {181*OVERSAMPLENR, 183},
+   {199*OVERSAMPLENR, 177},
+   {217*OVERSAMPLENR, 171},
+   {235*OVERSAMPLENR, 166},
+   {253*OVERSAMPLENR, 162},
+   {271*OVERSAMPLENR, 157},
+   {289*OVERSAMPLENR, 153},
+   {307*OVERSAMPLENR, 149},
+   {325*OVERSAMPLENR, 146},
+   {343*OVERSAMPLENR, 142},
+   {361*OVERSAMPLENR, 139},
+   {379*OVERSAMPLENR, 135},
+   {397*OVERSAMPLENR, 132},
+   {415*OVERSAMPLENR, 129},
+   {433*OVERSAMPLENR, 126},
+   {451*OVERSAMPLENR, 123},
+   {469*OVERSAMPLENR, 121},
+   {487*OVERSAMPLENR, 118},
+   {505*OVERSAMPLENR, 115},
+   {523*OVERSAMPLENR, 112},
+   {541*OVERSAMPLENR, 110},
+   {559*OVERSAMPLENR, 107},
+   {577*OVERSAMPLENR, 105},
+   {595*OVERSAMPLENR, 102},
+   {613*OVERSAMPLENR, 99},
+   {631*OVERSAMPLENR, 97},
+   {649*OVERSAMPLENR, 94},
+   {667*OVERSAMPLENR, 92},
+   {685*OVERSAMPLENR, 89},
+   {703*OVERSAMPLENR, 86},
+   {721*OVERSAMPLENR, 84},
+   {739*OVERSAMPLENR, 81},
+   {757*OVERSAMPLENR, 78},
+   {775*OVERSAMPLENR, 75},
+   {793*OVERSAMPLENR, 72},
+   {811*OVERSAMPLENR, 69},
+   {829*OVERSAMPLENR, 66},
+   {847*OVERSAMPLENR, 62},
+   {865*OVERSAMPLENR, 59},
+   {883*OVERSAMPLENR, 55},
+   {901*OVERSAMPLENR, 51},
+   {919*OVERSAMPLENR, 46},
+   {937*OVERSAMPLENR, 41},
+   {955*OVERSAMPLENR, 35},
+   {973*OVERSAMPLENR, 27},
+   {991*OVERSAMPLENR, 17},
+   {1009*OVERSAMPLENR, 1},
+   {1023*OVERSAMPLENR, 0}  //to allow internal 0 degrees C
 };
 #endif
 #if (THERMISTORHEATER_0 == 8) || (THERMISTORHEATER_1 == 8) || (THERMISTORHEATER_2 == 8) || (THERMISTORBED == 8)
@@ -407,6 +409,73 @@ const short temptable_10[][2] PROGMEM = {
    {981*OVERSAMPLENR, 23},
    {1005*OVERSAMPLENR, 5},
    {1016*OVERSAMPLENR, 0}
+};
+#endif
+
+#if (THERMISTORHEATER_0 == 11) || (THERMISTORHEATER_1 == 11) || (THERMISTORHEATER_2 == 11) || (THERMISTORBED == 11)
+// 100k Termistor Chino Aliexpress MF58 // UTILIZADo por el Argento //Ultima actualizacion 24-feb-2014
+const short temptable_11[][2] PROGMEM = {
+    {     380,       300     }, // r=   112 adc=23.74
+    {     409,       295     }, // r=   120 adc=25.56
+    {     441,       290     }, // r=   130 adc=27.56
+    {     476,       285     }, // r=   141 adc=29.73
+    {     514,       280     }, // r=   152 adc=32.11
+    {     556,       275     }, // r=   165 adc=34.72
+    {     601,       270     }, // r=   179 adc=37.57
+    {     651,       265     }, // r=   195 adc=40.70
+    {     706,       260     }, // r=   212 adc=44.13
+    {     766,       255     }, // r=   231 adc=47.90
+    {     833,       250     }, // r=   252 adc=52.04
+    {     905,       245     }, // r=   275 adc=56.59
+    {     985,       240     }, // r=   301 adc=61.59
+    {    1073,       235     }, // r=   330 adc=67.09
+    {    1170,       230     }, // r=   362 adc=73.15
+    {    1277,       225     }, // r=   398 adc=79.82
+    {    1395,       220     }, // r=   438 adc=87.17
+    {    1524,       215     }, // r=   483 adc=95.25
+    {    1667,       210     }, // r=   533 adc=104.16
+    {    1823,       205     }, // r=   589 adc=113.96
+    {    1996,       200     }, // r=   653 adc=124.74
+    {    2185,       195     }, // r=   724 adc=136.59
+    {    2394,       190     }, // r=   805 adc=149.61
+    {    2622,       185     }, // r=   897 adc=163.88
+    {    2872,       180     }, // r=  1000 adc=179.50
+    {    3145,       175     }, // r=  1118 adc=196.58
+    {    3443,       170     }, // r=  1252 adc=215.18
+    {    3767,       165     }, // r=  1405 adc=235.41
+    {    4117,       160     }, // r=  1580 adc=257.32
+    {    4495,       155     }, // r=  1780 adc=280.96
+    {    4902,       150     }, // r=  2009 adc=306.36
+    {    5336,       145     }, // r=  2273 adc=333.51
+    {    5798,       140     }, // r=  2578 adc=362.36
+    {    6286,       135     }, // r=  2930 adc=392.85
+    {    6797,       130     }, // r=  3338 adc=424.83
+    {    7330,       125     }, // r=  3812 adc=458.12
+    {    7880,       120     }, // r=  4363 adc=492.50
+    {    8443,       115     }, // r=  5007 adc=527.70
+    {    9014,       110     }, // r=  5761 adc=563.39
+    {    9588,       105     }, // r=  6646 adc=599.24
+    {   10158,       100     }, // r=  7688 adc=634.87
+    {   10719,        95     }, // r=  8917 adc=669.91
+    {   11264,        90     }, // r= 10373 adc=704.01
+    {   11789,        85     }, // r= 12102 adc=736.84
+    {   12289,        80     }, // r= 14162 adc=768.09
+    {   12760,        75     }, // r= 16623 adc=797.51
+    {   13199,        70     }, // r= 19575 adc=824.93
+    {   13603,        65     }, // r= 23127 adc=850.21
+    {   13973,        60     }, // r= 27415 adc=873.28
+    {   14306,        55     }, // r= 32611 adc=894.14
+    {   14605,        50     }, // r= 38931 adc=912.80
+    {   14870,        45     }, // r= 46648 adc=929.36
+    {   15103,        40     }, // r= 56107 adc=943.93
+    {   15306,        35     }, // r= 67749 adc=956.64
+    {   15482,        30     }, // r= 82138 adc=967.63
+    {   15633,        25     }, // r=100000 adc=977.08
+    {   15762,        20     }, // r=122272 adc=985.13
+    {   15871,        15     }, // r=150172 adc=991.95
+    {   15963,        10     }, // r=185290 adc=997.69
+    {   16040,         5     }, // r=229714 adc=1002.49
+    {   16104,         0     }, // r=286200 adc=1006.47
 };
 #endif
 
@@ -554,242 +623,83 @@ const short temptable_55[][2] PROGMEM = {
 };
 #endif
 
-#if (THERMISTORHEATER_0 == 56) || (THERMISTORHEATER_1 == 56) || (THERMISTORHEATER_2 == 56) || (THERMISTORBED == 56) 
-// Thermistor lookup table for Marlin
-// ./createTemperatureLookup.py --rp=4520 --t1=20.0:121500.0 --t2=150.0:1256.0 --t3=250.0:175.0 --num-temps=72
-const short temptable_56[][2] PROGMEM = {
-   {164, 350},
-   {174, 345},
-   {185, 340},
-   {196, 335},
-   {208, 330},
-   {222, 325},
-   {236, 320},
-   {252, 315},
-   {268, 310},
-   {287, 305},
-   {306, 300},
-   {328, 295},
-   {351, 290},
-   {377, 285},
-   {404, 280},
-   {434, 275},
-   {467, 270},
-   {504, 265},
-   {543, 260},
-   {586, 255},
-   {634, 250},
-   {686, 245},
-   {743, 240},
-   {806, 235},
-   {876, 230},
-   {953, 225},
-   {1037, 220},
-   {1131, 215},
-   {1234, 210},
-   {1348, 205},
-   {1474, 200},
-   {1614, 195},
-   {1769, 190},
-   {1940, 185},
-   {2129, 180},
-   {2339, 175},
-   {2570, 170},
-   {2825, 165},
-   {3106, 160},
-   {3415, 155},
-   {3753, 150},
-   {4123, 145},
-   {4526, 140},
-   {4962, 135},
-   {5431, 130},
-   {5934, 125},
-   {6468, 120},
-   {7032, 115},
-   {7621, 110},
-   {8231, 105},
-   {8855, 100},
-   {9487, 95},
-   {10119, 90},
-   {10743, 85},
-   {11350, 80},
-   {11934, 75},
-   {12487, 70},
-   {13004, 65},
-   {13480, 60},
-   {13913, 55},
-   {14301, 50},
-   {14644, 45},
-   {14944, 40},
-   {15204, 35},
-   {15425, 30},
-   {15612, 25},
-   {15768, 20},
-   {15897, 15},
-   {16002, 10},
-   {16087, 5},
-   {16156, 0}
+#if (THERMISTORHEATER_0 == 60) || (THERMISTORHEATER_1 == 60) || (THERMISTORHEATER_2 == 60) || (THERMISTORBED == 60) // Maker's Tool Works Kapton Bed Thermister
+const short temptable_60[][2] PROGMEM = {
+   {51*OVERSAMPLENR, 272},
+   {61*OVERSAMPLENR, 258},
+   {71*OVERSAMPLENR, 247},
+   {81*OVERSAMPLENR, 237},
+   {91*OVERSAMPLENR, 229},
+   {101*OVERSAMPLENR, 221},
+   {131*OVERSAMPLENR, 204},
+   {161*OVERSAMPLENR, 190},
+   {191*OVERSAMPLENR, 179},
+   {231*OVERSAMPLENR, 167},
+   {271*OVERSAMPLENR, 157},
+   {311*OVERSAMPLENR, 148},
+   {351*OVERSAMPLENR, 140},
+   {381*OVERSAMPLENR, 135},
+   {411*OVERSAMPLENR, 130},
+   {441*OVERSAMPLENR, 125},
+   {451*OVERSAMPLENR, 123},
+   {461*OVERSAMPLENR, 122},
+   {471*OVERSAMPLENR, 120},
+   {481*OVERSAMPLENR, 119},
+   {491*OVERSAMPLENR, 117},
+   {501*OVERSAMPLENR, 116},
+   {511*OVERSAMPLENR, 114},
+   {521*OVERSAMPLENR, 113},
+   {531*OVERSAMPLENR, 111},
+   {541*OVERSAMPLENR, 110},
+   {551*OVERSAMPLENR, 108},
+   {561*OVERSAMPLENR, 107},
+   {571*OVERSAMPLENR, 105},
+   {581*OVERSAMPLENR, 104},
+   {591*OVERSAMPLENR, 102},
+   {601*OVERSAMPLENR, 101},
+   {611*OVERSAMPLENR, 100},
+   {621*OVERSAMPLENR, 98},
+   {631*OVERSAMPLENR, 97},
+   {641*OVERSAMPLENR, 95},
+   {651*OVERSAMPLENR, 94},
+   {661*OVERSAMPLENR, 92},
+   {671*OVERSAMPLENR, 91},
+   {681*OVERSAMPLENR, 90},
+   {691*OVERSAMPLENR, 88},
+   {701*OVERSAMPLENR, 87},
+   {711*OVERSAMPLENR, 85},
+   {721*OVERSAMPLENR, 84},
+   {731*OVERSAMPLENR, 82},
+   {741*OVERSAMPLENR, 81},
+   {751*OVERSAMPLENR, 79},
+   {761*OVERSAMPLENR, 77},
+   {771*OVERSAMPLENR, 76},
+   {781*OVERSAMPLENR, 74},
+   {791*OVERSAMPLENR, 72},
+   {801*OVERSAMPLENR, 71},
+   {811*OVERSAMPLENR, 69},
+   {821*OVERSAMPLENR, 67},
+   {831*OVERSAMPLENR, 65},
+   {841*OVERSAMPLENR, 63},
+   {851*OVERSAMPLENR, 62},
+   {861*OVERSAMPLENR, 60},
+   {871*OVERSAMPLENR, 57},
+   {881*OVERSAMPLENR, 55},
+   {891*OVERSAMPLENR, 53},
+   {901*OVERSAMPLENR, 51},
+   {911*OVERSAMPLENR, 48},
+   {921*OVERSAMPLENR, 45},
+   {931*OVERSAMPLENR, 42},
+   {941*OVERSAMPLENR, 39},
+   {951*OVERSAMPLENR, 36},
+   {961*OVERSAMPLENR, 32},
+   {981*OVERSAMPLENR, 23},
+   {991*OVERSAMPLENR, 17},
+   {1001*OVERSAMPLENR, 9},
+   {1008*OVERSAMPLENR, 0},
 };
-
 #endif
 
-#if (THERMISTORHEATER_0 == 57) || (THERMISTORHEATER_1 == 57) || (THERMISTORHEATER_2 == 57) || (THERMISTORBED == 57) 
-// Thermistor lookup table for Marlin
-// ./createTemperatureLookupMarlin.py --rp=4680 --t1=21.4:106300 --t2=187:1023 --t3=248:281 --num-temps=72
-// thermistor table for  extruder
-const short temptable_57[][2] PROGMEM = {
-  {159, 340},
-  {172, 335},
-  {186, 330},
-  {202, 325},
-  {219, 320},
-  {238, 315},
-  {258, 310},
-  {281, 305},
-  {306, 300},
-  {333, 295},
-  {363, 209},
-  {396, 285},
-  {432, 280},
-  {472, 275},
-  {516, 270},
-  {565, 265},
-  {618, 260},
-  {677, 255},
-  {742, 240},
-  {814, 245},
-  {894, 240},
-  {981, 235},
-  {1078, 230},
-  {1184, 225},
-  {1302, 220},
-  {1432, 215},
-  {1574, 210},
-  {1732, 205},
-  {1904, 200},
-  {2094, 195},
-  {2302, 190},
-  {2530, 185},
-  {2779, 180},
-  {3050, 175},
-  {3344, 170},
-  {3662, 165},
-  {4006, 160},
-  {4375, 155},
-  {4770, 150},
-  {5190, 145},
-  {5634, 140},
-  {6101, 135},
-  {6589, 130},
-  {7095, 125},
-  {7617, 120},
-  {8149, 115},
-  {8689, 110},
-  {9230, 105},
-  {9770, 100},
-  {10302, 95},
-  {11810, 90},
-  {12271, 85},
-  {12705, 80},
-  {13111, 75},
-  {13487, 70},
-  {13833, 65},
-  {14149, 60},
-  {14435, 55},
-  {14693, 50},
-  {14923, 45},
-  {15127, 40},
-  {15308, 35},
-  {15466, 30},
-  {15604, 25},
-  {15725, 20},
-  {15828, 15},
-  {15918, 10},
-  {15994, 5},
-  {16060, 0}
-};
-
-#endif
-
-#if (THERMISTORHEATER_0 == 58) || (THERMISTORHEATER_1 == 58) || (THERMISTORHEATER_2 == 58) || (THERMISTORBED == 58) 
-// Thermistor lookup table for Marlin
-// ./createTemperatureLookup.py --rp=4670 --t1=21.7:110700.0 --t2=190.0:623.0 --t3=259.0:192.0 --num-temps=72
-// thermistor table for  heatbed
-const short temptable_58[][2] PROGMEM = {
-  {198, 350},
-  {210, 345},
-  {223, 340},
-  {236, 335},
-  {251, 330},
-  {267, 325},
-  {284, 320},
-  {303, 315},
-  {323, 310},
-  {345, 305},
-  {369, 300},
-  {395, 295},
-  {423, 290},
-  {453, 285},
-  {486, 280},
-  {522, 275},
-  {562, 270},
-  {605, 265},
-  {652, 260},
-  {704, 255},
-  {760, 250},
-  {822, 245},
-  {890, 240},
-  {964, 235},
-  {1046, 230},
-  {1136, 225},
-  {1235, 220},
-  {1344, 215},
-  {1464, 210},
-  {1597, 205},
-  {1743, 200},
-  {1903, 195},
-  {2080, 190},
-  {2275, 185},
-  {2489, 180},
-  {2725, 175},
-  {2983, 170},
-  {3267, 165},
-  {3576, 160},
-  {3913, 155},
-  {4280, 150},
-  {4676, 145},
-  {5104, 140},
-  {5561, 135},
-  {6049, 130},
-  {6565, 125},
-  {7108, 120},
-  {7673, 115},
-  {8256, 110},
-  {8852, 105},
-  {9455, 100},
-  {10058, 95},
-  {10654, 90},
-  {11237, 85},
-  {11799, 80},
-  {12334, 75},
-  {12838, 70},
-  {13306, 65},
-  {13734, 60},
-  {14123, 55},
-  {14471, 50},
-  {14779, 45},
-  {15048, 40},
-  {15282, 35},
-  {15481, 30},
-  {15651, 25},
-  {15793, 20},
-  {15912, 15},
-  {16010, 10},
-  {16090, 5},
-  {16154, 0}
- };
-
-#endif
 
 #define _TT_NAME(_N) temptable_ ## _N
 #define TT_NAME(_N) _TT_NAME(_N)
